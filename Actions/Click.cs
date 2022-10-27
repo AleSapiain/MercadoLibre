@@ -11,6 +11,7 @@ namespace MercadoLibre.Actions
     {
         public static void On(IWebDriver driver, By locator)
         {
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
             driver.FindElement(locator).Click();
         }
     }

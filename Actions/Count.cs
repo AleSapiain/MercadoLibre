@@ -9,6 +9,7 @@ namespace MercadoLibre.Actions
     {
         public static int resultItems(IWebDriver driver, By locator)
         {
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
             int result = driver.FindElements(locator).Count;
             return result;
         }

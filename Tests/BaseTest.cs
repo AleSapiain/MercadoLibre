@@ -1,3 +1,4 @@
+
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -17,7 +18,7 @@ namespace MercadoLibre
             options.AddArguments("--start-maximized");
             options.AddArguments("--incognito");
 
-            driver = new ChromeDriver(@"D:\SeleniumTest-Ganadero\MercadoLibre\resources", options);
+            driver = new ChromeDriver(@"..\..\..\resources", options);
             driver.Navigate().GoToUrl(Url);
         }
 
@@ -25,6 +26,7 @@ namespace MercadoLibre
         public void TearDownBase()
         {
             if (driver != null)
+                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
                 driver.Quit();
         }
     }

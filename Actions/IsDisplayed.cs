@@ -9,6 +9,7 @@ namespace MercadoLibre.Actions
     {
         public static bool element(IWebDriver driver, By locator)
         {
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
             return driver.FindElement(locator).Displayed;
         }
     }

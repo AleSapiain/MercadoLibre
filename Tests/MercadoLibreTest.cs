@@ -39,7 +39,6 @@ namespace MercadoLibre.Tests
                 RedirectTo.FilterUsedItems(driver);
                 Assert.GreaterOrEqual(VerifyList.countElements(driver), itemsMin, "Existen mas de " + itemsMin + " " + item + "(s) usados(as) disponibles.");
 
-                System.Threading.Thread.Sleep(2000);
             });
         }
 
@@ -56,7 +55,6 @@ namespace MercadoLibre.Tests
                 RedirectTo.FilterNewItems(driver);
                 Assert.GreaterOrEqual(VerifyList.countElements(driver), itemsMin, "Existen mas de " + itemsMin + " " + item + "(s) nuevos(as) disponibles.");
 
-                System.Threading.Thread.Sleep(2000);
             });
         }
     }
